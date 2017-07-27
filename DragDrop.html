@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>A jQuery Drag-and-Drop Number Cards Game</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+
+    <script type="text/javascript">
+
+        $( init );
+
+        function init() {
+            //ithalat kutusu dogru  cevaplari
+            var numbersIdhalat = ["İlaç", "Cam ve Seramik","Kahve","Ham Petrol","Silah","Hayvan"];
+            numbersIdhalat.sort( function() { return Math.random() - .5 } );
+            //ithalat kutusu dogru  cevaplari
+
+
+            //ihracat kutusu dogru cevaplari
+            var numbers = [ "Madenler", "Fındık","Tekstil Ürünleri","Pirinç","Motorlu Araç","DoğlaGaz"];
+            numbers.sort( function() { return Math.random() - .5 } );
+            //ihracat kutusu dogru cevaplari
+
+
+            rghtses = new Audio();
+            rghtses.src = 'media/dogru.mp3';
+
+            $('#cardPile').html( '' );
+            $('#cardSlots').html( '' );
+
+
+
+            for ( var i=0; i<6; i++ ) {
+                $('<div class="htrh" style="padding: 15px">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+                    containment: '#content', // harketler nerelede olabilir
+                    stack: '.htrh',
+                    cursor: 'move',
+                    revert: true
+                } );
+            }
+            var words = [ 'Ihracat'];
+            for ( var i=1; i<=1; i++ ) {
+                $('<div class="htrh"></div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+                    accept: '.htrh', //burada nereye gidecegini belirlemek icin kullaniyoruz..
+                    hoverClass: 'hovered',
+                    drop: handleCardDrop,
+                } );
+            }
+
+
+
+
+
+
+            for ( var i=0; i<6; i++ ) {
+                $('<div class="okuyormu" style="padding: 15px">' + numbersIdhalat[i] + '</div>').data( 'number', numbersIdhalat[i] ).attr( 'id', 'card'+numbersIdhalat[i] ).appendTo( '#cardPile' ).draggable( {
+                    containment: '#content', // harketler nerelede olabilir
+                    stack: '.okuyormu',
+                    cursor: 'move',
+                    revert: true
+                } );
+            }
+            var wordsidhalat = ['Idhalat'];
+            for ( var i=1; i<=1; i++ ) {
+                $('<div class="okuyormu"></div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+                    accept: '.okuyormu', //burada nereye gidecegini belirlemek icin kullaniyoruz..
+                    hoverClass: 'hovered',
+                    drop: handleCardDrop
+                } );
+            }
+        }
+
+
+
+
+        function handleCardDrop( event, ui ) {
+            ui.draggable.draggable( 'disable' ); //contain sonra draggable olmamasi icin
+            ui.draggable.draggable( 'option', 'revert', false );
+
+            rghtses.play();
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div id="content">
+
+    <div id="cardPile" class="cardPileSS"></div>
+    <div class="ithalTxt">
+        İTHAL ÜRÜNLERİMİZ
+    </div>
+    <div class="ihracTxt">
+        İHRAÇ ÜRÜNLERİMİZ
+    </div>
+    <div id="cardSlots">
+    </div>
+
+
+
+
+</div>
+
+</body>
+</html>

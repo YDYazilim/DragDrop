@@ -1,0 +1,150 @@
+body {
+   margin: 30px;
+    font-family: "Georgia", serif;
+    line-height: 1.8em;
+    color: #333;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#content {
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+#cardSlots {
+    margin: -44px auto 0 auto;
+    background: #ddf;
+}
+
+.cardPileSS{
+    margin: 0 auto;
+    background: #ffd;
+}
+#cardSlots {
+    width: 910px;
+    height: 120px;
+    padding: 20px;
+    padding-top: 63px;
+    padding-left: 88px;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+.cardPileSS{
+    width: 910px;
+    height: 194px;
+    padding: 20px;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+#cardSlots{
+    width: 850px;
+    height: 281px;
+}
+
+
+#cardSlots div {
+    float: left;
+    width: 850px;
+    height:321px;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 0;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: -5px 0 0 10px;
+    background: #fff;
+
+}
+#cardSlots div{
+    width: 405px;
+    height: 246px;
+}
+
+.cardPileSS div{
+    float: left;
+    width: 144px;
+    height: 12px;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 0;
+    border: 1px solid #ddf;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 0 0 0 10px;
+    background: #fff;
+    cursor: -webkit-grab;
+}
+
+
+#cardSlots div:first-child{
+    margin-left: -30px;
+}
+
+
+#cardSlots div.hovered {
+    background: #aaa;
+}
+
+#cardSlots div {
+    border-style: dashed;
+}
+
+
+.cardPileSS div{
+    background: #e8621b;
+    color: #fff;
+    text-shadow: 0 0 23px #fdc41e;
+    width: 144px;
+    font-size: 20px;
+    padding-bottom: -6px;
+    height: 25px;
+    margin: 6px;
+    margin-left: 35px;
+
+}
+
+
+.cardPileSS div.ui-draggable-dragging{
+    -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    background-color: #ffffff;
+    color: #e8621b;
+    cursor: move;
+}
+
+
+.ithalTxt, .ihracTxt{
+    font: normal bold  26px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: black;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-spacing: -4px;
+    margin: 0 0 0 475px;
+    top: 40px;
+    position: relative;
+}
+
+.ihracTxt{
+    margin: 0 0 0 -475px;
+    top: 14px;
+}
