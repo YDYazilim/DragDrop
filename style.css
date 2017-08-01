@@ -148,3 +148,9 @@ h1, h2, h3, h4 {
     margin: 0 0 0 -475px;
     top: 14px;
 }
+
+
+    /*How to center everything inside a container*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
